@@ -1,0 +1,22 @@
+{
+  "name": "updata",
+  "version": "0.1.0",
+  "description": "utility for updating hg sub-repositories (specifically CSData)",
+  "main": "updata.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://vsisk@bitbucket.org/vsisk/updata.git"
+  },
+  "author": "Vincent Sisk",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/vsisk/updata#readme",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "shelljs": "^0.6.0"
+  },
+  "devDependencies": {
+  }
+}
