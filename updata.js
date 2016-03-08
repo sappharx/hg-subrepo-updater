@@ -2,9 +2,10 @@
 
 require('shelljs/global');
 const fs = require('fs');
+const chalk = require('chalk');
 
 if (!fs.existsSync('.hgsub')) {
-    console.error('no .hgsub file found in directory');
+    console.error(chalk.red.bold('no .hgsub file found in directory'));
     exit(1);
 }
 
@@ -31,7 +32,7 @@ cat('.hgsub')
 function pull(path) {
     cd(path);
     
-    echo(`pulling changes for ${path}`);
+    echo(chalk.magenta(`pulling changes for ${chalk.green(path)}`));
     exec('hg pull --verbose');
     
     cd(hgRoot);
@@ -42,7 +43,7 @@ function pullAndUpdate(path, tag) {
     
     cd(path);
 
-    echo(`updating ${path} to tag: ${tag}`);
+    echo(chalk.magenta(`updating ${chalk.green(path)} to tag: ${chalk.yellow(tag)}`));
     exec(`hg update ${tag}`);
     
     cd(hgRoot);
