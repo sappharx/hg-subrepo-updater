@@ -5,7 +5,7 @@ let pkg = require('./package.json');
 
 options
     .version(pkg.version)
-    .option('-t, --tag <id>', 'tag to update to [defaults to tip]')
+    .option('-t, --tag <id>', 'tag to which to update [defaults to tip]')
     .option('-p, --pull-only', 'only pull latest changes from remote')
     .parse(process.argv);
 

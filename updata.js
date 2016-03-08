@@ -2,10 +2,10 @@
 
 require('shelljs/global');
 const fs = require('fs');
-const chalk = require('chalk');
+const msg = require('./messages');
 
 if (!fs.existsSync('.hgsub')) {
-    console.error(errorMessage('no .hgsub file found in directory'));
+    console.error(msg.error('no .hgsub file found in directory'));
     exit(1);
 }
 
@@ -22,13 +22,13 @@ cat('.hgsub')
 function pull(repo) {
     cd(repo);
 
-    echo(chalk.magenta(`pulling changes for ${repoMessage(repo)}`));
+    echo(msg.cmd(`pulling changes for ${msg.repo(repo)}`));
     let exitCode = exec('hg pull --verbose').code;
     
     cd(hgRoot);
     
     if (exitCode !== 0) {
-        console.error(errorMessage(`pull for ${repoMessage(repo)} failed`));
+        console.error(msg.error(`pull for ${msg.repo(repo)} failed`));
         return false;
     }
     
@@ -42,28 +42,16 @@ function update(repo, tag) {
 
     cd(repo);
 
-    echo(chalk.magenta(`updating ${repoMessage(repo)} to tag: ${tagMessage(tag)}`));
+    echo(msg.cmd(`updating ${msg.repo(repo)} to tag: ${msg.tag(tag)}`));
     
     let exitCode = exec(`hg update ${tag}`).code;
     
     cd(hgRoot);
     
     if (exitCode !== 0) {
-        console.error(errorMessage(`update for ${repoMessage(repo)} failed`));
+        console.error(msg.error(`update for ${msg.repo(repo)} failed`));
         return false;
     }
     
     return true;
-}
-
-function errorMessage(message) {
-    return chalk.red.bold(message);
-}
-
-function repoMessage(repo) {
-    return chalk.green(repo);
-}
-
-function tagMessage(tag) {
-    return chalk.yellow(tag);
 }
