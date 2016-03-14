@@ -16,10 +16,13 @@ const logging = {
     quiet: options.quiet
 };
 
+let ignoredRepos = options.ignore;
+
 cat('.hgsub')
     .split('\r\n')
     .filter(line => line.length > 0)
     .map(line => line.split('=')[0].trim())
+    .filter(repo => !ignoredRepos.includes(repo))
     .map(path => options.pullOnly
         ? hg.pull(path, logging)
         : hg.update(path, options.tag, logging));
