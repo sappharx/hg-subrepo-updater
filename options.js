@@ -10,6 +10,7 @@ options
     .option('-v, --verbose', 'display output from mercurial')
     .option('-q, --quiet', 'limit console output')
     .option('-g, --ignore <subrepos>', 'ignore specified sub-repositories (comma separated)', getList)
+    .option('-G, --ignore-file <file>', 'specify which sub-repositories to ignore in a separate file')
     .parse(process.argv);
 
 const defaults = {
@@ -17,7 +18,8 @@ const defaults = {
     pullOnly: false,
     verbose: false,
     quiet: false,
-    ignore: []
+    ignore: [],
+    ignoreFile: '.updataignore',
 };
 
 function getList(val) {
