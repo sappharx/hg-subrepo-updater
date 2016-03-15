@@ -16,12 +16,11 @@ const logging = {
     quiet: options.quiet
 };
 
+const subrepoPattern = /^([-\w\/]+)(?=\s*=)/mg;
 let ignoredRepos = options.ignore;
 
 cat('.hgsub')
-    .split('\r\n')
-    .filter(line => line.length > 0)
-    .map(line => line.split('=')[0].trim())
+    .match(subrepoPattern)
     .filter(repo => !ignoredRepos.includes(repo))
     .map(path => options.pullOnly
         ? hg.pull(path, logging)
