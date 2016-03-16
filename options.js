@@ -3,27 +3,27 @@
 let options = require('commander');
 let pkg = require('./package.json');
 
+const descriptions = {
+    ignore: 'ignore specified sub-repositories [provide comma-separated list]',
+    ignoreFile: 'specify which sub-repositories to ignore in a separate file',
+    pullOnly: 'only pull latest changes from remote (don\'t update)',
+    quiet: 'limit console output',
+    tag: 'tag to which to update all sub-repositories [defaults to tip]',
+    verbose: 'display output from mercurial',
+};
+
 options
     .version(pkg.version)
-    .option('-t, --tag <id>', 'tag to which to update [defaults to tip]')
-    .option('-p, --pull-only', 'only pull latest changes from remote')
-    .option('-v, --verbose', 'display output from mercurial')
-    .option('-q, --quiet', 'limit console output')
-    .option('-g, --ignore <subrepos>', 'ignore specified sub-repositories (comma separated)', getList)
-    .option('-G, --ignore-file <file>', 'specify which sub-repositories to ignore in a separate file')
+    .option('-g, --ignore <subrepos>', descriptions.ignore, getList, [])
+    .option('-G, --ignore-file <file>', descriptions.ignoreFile, '.updataignore')
+    .option('-p, --pull-only', descriptions.pullOnly)
+    .option('-q, --quiet', descriptions.quiet)
+    .option('-t, --tag <id>', descriptions.tag, 'tip')
+    .option('-v, --verbose', descriptions.verbose)
     .parse(process.argv);
-
-const defaults = {
-    tag: 'tip',
-    pullOnly: false,
-    verbose: false,
-    quiet: false,
-    ignore: [],
-    ignoreFile: '.updataignore',
-};
 
 function getList(val) {
     return val.split(',');
 }
 
-module.exports = Object.assign({}, defaults, options);
+module.exports = options;
