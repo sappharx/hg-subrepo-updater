@@ -5,12 +5,7 @@
 const fs = require('fs');
 const msg = require('./messages');
 const options = require('./options');
-
-if (!fs.existsSync('.hgsub')) {
-    console.error(msg.error('no .hgsub file found in directory'));
-    process.exit(1);
-}
-
+const parser = require('./parser');
 const hg = require('./mercurial');
 
 const logging = {
@@ -18,20 +13,24 @@ const logging = {
     quiet: options.quiet
 };
 
-let ignoredRepos = options.ignore
-    .concat(parseIgnoredSubRepos(options.ignoreFile));
+let ignoredRepos = parser.ignoreFile(options.ignoreFile)
+    .concat(options.ignore);
 
-function parseIgnoredSubRepos(ignoreFile) {
-    if (!fs.existsSync(ignoreFile)) {
-        return [];
-    }
-    
-    return cat(ignoreFile).match(/^([-\w\/]+)(?=\s*)$/mg);
+let filterIgnoredRepos = repos => options.listFile === '.hgsub' 
+    ? repos.filter(repo => !ignoredRepos.includes(repo))
+    : repos;
+
+let repoPaths = options.list.length > 0
+    ? options.list
+    : filterIgnoredRepos(parser.repoPathFile(options.listFile));
+
+if (repoPaths === null) {
+    console.error(msg.error(`file (${options.listFile}) not found`));
+    options.help();
+    process.exit(1);
 }
 
-cat('.hgsub')
-    .match(/^([-\w\/]+)(?=\s*=.*$)/mg)
-    .filter(repo => !ignoredRepos.includes(repo))
+repoPaths
     .map(path => options.pullOnly
         ? hg.pull(path, logging)
         : hg.update(path, options.tag, logging));

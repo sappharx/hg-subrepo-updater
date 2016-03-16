@@ -1,6 +1,6 @@
 {
   "name": "updata",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "utility for updating hg sub-repositories",
   "main": "updata.js",
   "scripts": {
