@@ -1,7 +1,7 @@
 'use strict';
 
 let options = require('commander');
-let pkg = require('./package.json');
+let pkg = require('../package.json');
 
 const descriptions = {
     ignore: 'ignore specified sub-repositories [provide comma-separated list]',

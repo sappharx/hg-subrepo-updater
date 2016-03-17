@@ -13,6 +13,12 @@ const logging = {
     quiet: options.quiet
 };
 
+if (!fs.existsSync(options.listFile)) {
+    console.error(msg.error(`file (${options.listFile}) not found`));
+    options.help();
+    process.exit(1);
+}
+
 let ignoredRepos = parser.ignoreFile(options.ignoreFile)
     .concat(options.ignore);
 
@@ -23,12 +29,6 @@ let filterIgnoredRepos = repos => options.listFile === '.hgsub'
 let repoPaths = options.list.length > 0
     ? options.list
     : filterIgnoredRepos(parser.repoPathFile(options.listFile));
-
-if (repoPaths === null) {
-    console.error(msg.error(`file (${options.listFile}) not found`));
-    options.help();
-    process.exit(1);
-}
 
 repoPaths
     .map(path => options.pullOnly

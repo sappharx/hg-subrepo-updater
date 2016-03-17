@@ -1,13 +1,17 @@
 {
   "name": "updata",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "utility for updating hg sub-repositories",
   "main": "updata.js",
   "scripts": {
+    "build": "babel src --out-dir build --source-maps",
+    "watch": "babel src --out-dir build --source-maps --watch",
+    "start": "node --harmony build/updata.js",
+    "preinstall": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "bin" : {
-      "updata": "./updata.js"
+  "bin": {
+    "updata": "./build/updata.js"
   },
   "repository": {
     "type": "git",
@@ -17,9 +21,14 @@
   "license": "MIT",
   "homepage": "https://bitbucket.org/vsisk/updata#readme",
   "dependencies": {
+    "babel-polyfill": "^6.7.2",
     "chalk": "^1.1.1",
     "commander": "^2.9.0",
-    "shelljs": "^0.6.0"
+    "shelljs": "^0.6.0",
+    "source-map-support": "^0.4.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "babel-cli": "^6.6.5",
+    "babel-preset-es2015-node5": "^1.2.0"
+  }
 }
