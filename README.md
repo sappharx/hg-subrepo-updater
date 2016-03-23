@@ -4,7 +4,7 @@
 http://img.shields.io/:license-mit-blue.svg)](
 http://vsisk.mit-license.org)
 
-what is this? what does it do?
+This is just a little command-line app that updates your sub-repositories
 
 ## Example
 usage: `updata [options]`
