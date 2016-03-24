@@ -10,7 +10,7 @@ const descriptions = {
     listFile: 'specify which sub-repositories to update in a separate file',
     pullOnly: 'only pull latest changes from remote (don\'t update)',
     quiet: 'limit console output',
-    tag: 'tag to which to update all sub-repositories [defaults to tip]',
+    tag: 'tag to which to update sub-repositories [defaults to tip]',
     verbose: 'display output from mercurial',
 };
 

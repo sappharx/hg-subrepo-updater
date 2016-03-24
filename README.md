@@ -1,19 +1,29 @@
 # updata
 
 [![License](
-http://img.shields.io/:license-mit-blue.svg)](
+http://img.shields.io/:license-mit-blue.svg?style=flat-square)](
 http://vsisk.mit-license.org)
 
-This is just a little command-line app that updates your sub-repositories
+This is just a little command-line app that updates your mercurial sub-repositories
 
-## Example
-usage: `updata [options]`
+## Usage
+Usage: `updata [options]`
 
-`updata -h` or `updata --help` for list of available options
+  Options:
+
+    -h, --help                output usage information
+    -V, --version             output the version number
+    -g, --ignore <subrepos>   ignore specified sub-repositories [provide comma-separated list]
+    -G, --ignore-file <file>  specify which sub-repositories to ignore in a separate file
+    -l, --list <subrepos>     update specified sub-repositories [provide comma-separated list]
+    -L, --list-file <file>    specify which sub-repositories to update in a separate file
+    -p, --pull-only           only pull latest changes from remote (don't update)
+    -q, --quiet               limit console output
+    -t, --tag <id>            tag to which to update sub-repositories [defaults to tip]
+    -v, --verbose             display output from mercurial
+
 
 `updata` for default behavior (updates all sub-repositories in .hgsub)
-
-`updata -p` just pulls changes (doesn't update)
 
 ## Installation
 *currently*: clone the repo, then run `npm install -g .` from the project root
