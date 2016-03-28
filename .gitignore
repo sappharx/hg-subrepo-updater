@@ -3,3 +3,5 @@ Shared
 build
 .idea
 .vscode
+.nyc_output
+
