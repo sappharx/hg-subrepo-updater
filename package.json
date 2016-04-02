@@ -19,6 +19,11 @@
     "type": "git",
     "url": "git+https://vsisk@bitbucket.org/vsisk/updata.git"
   },
+  "keywords": [
+    "hg",
+    "mercurial",
+    "subrepo"
+  ],
   "author": "Vincent Sisk",
   "license": "MIT",
   "homepage": "https://bitbucket.org/vsisk/updata#readme",
