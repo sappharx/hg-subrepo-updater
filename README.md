@@ -26,7 +26,7 @@ This is just a little command-line app that updates your mercurial sub-repositor
     -v, --verbose             display output from mercurial
 
 
-`updata` for default behavior (updates all sub-repositories in .hgsub)
+just run `updata` for default behavior (updates all sub-repositories in .hgsub)
 
 ## Installation
 You need to have node, npm, and hg installed and available on your PATH
@@ -34,7 +34,7 @@ You need to have node, npm, and hg installed and available on your PATH
 run `npm install -g updata` to install globally
 
 ## Tests
-run tests: `npm test` or `npm t` (this isn't set up for watching right now)
+run tests: `npm run test:once` (not set up for watching right now)
 
 run code coverage: `npm run check-coverage`
 
