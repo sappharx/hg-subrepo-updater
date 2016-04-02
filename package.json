@@ -1,19 +1,18 @@
 {
   "name": "updata",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "utility for updating hg sub-repositories",
-  "main": "updata.js",
   "scripts": {
-    "prebuild": "npm run coverage",
-    "build": "babel src --out-dir build --source-maps",
-    "watch": "babel src --out-dir build --source-maps --watch",
-    "start": "node --harmony build/updata.js",
+    "prebuild": "rm -rf bin && npm run check-coverage",
+    "build": "babel src --out-dir bin --source-maps",
+    "watch": "babel src --out-dir bin --source-maps --watch",
+    "start": "node --harmony bin/updata.js",
     "prepublish": "npm run build",
     "test": "ava src/*.spec.js",
-    "coverage": "nyc npm test"
+    "check-coverage": "nyc npm test"
   },
   "bin": {
-    "updata": "./build/updata.js"
+    "updata": "./bin/updata.js"
   },
   "repository": {
     "type": "git",
