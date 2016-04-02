@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://vsisk@bitbucket.org/vsisk/updata.git"
+    "url": "https://github.com/sappharx/hg-subrepo-updater"
   },
   "keywords": [
     "hg",
@@ -25,7 +25,7 @@
   ],
   "author": "Vincent Sisk",
   "license": "MIT",
-  "homepage": "https://bitbucket.org/vsisk/updata#readme",
+  "homepage": "https://github.com/sappharx/hg-subrepo-updater",
   "dependencies": {
     "babel-polyfill": "6.7.2",
     "chalk": "1.1.1",

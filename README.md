@@ -1,4 +1,7 @@
 # updata
+[![NPM](
+https://nodei.co/npm/updata.png)](
+https://nodei.co/npm/updata/)
 
 [![License](
 http://img.shields.io/:license-mit-blue.svg?style=flat-square)](
@@ -7,7 +10,7 @@ http://vsisk.mit-license.org)
 This is just a little command-line app that updates your mercurial sub-repositories
 
 ## Usage
-Usage: `updata [options]`
+`updata [options]`
 
   Options:
 
@@ -26,16 +29,14 @@ Usage: `updata [options]`
 `updata` for default behavior (updates all sub-repositories in .hgsub)
 
 ## Installation
-You need to have node, npm, and hg installed and available on your $PATH variable.
+You need to have node, npm, and hg installed and available on your PATH
 
-*currently*: clone the repo, then run `npm install -g .` from the project root
-
-*future*: create an npm package
+run `npm install -g updata` to install globally
 
 ## Tests
 run tests: `npm test` or `npm t` (this isn't set up for watching right now)
 
-run code coverage: `npm run coverage`
+run code coverage: `npm run check-coverage`
 
 ## Contributing
 Fork it. Fix or improve it. Submit a pull request.
