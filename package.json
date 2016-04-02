@@ -1,10 +1,10 @@
 {
   "name": "updata",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "utility for updating hg sub-repositories",
   "main": "updata.js",
   "scripts": {
-    "prebuild": "npm coverage",
+    "prebuild": "npm run coverage",
     "build": "babel src --out-dir build --source-maps",
     "watch": "babel src --out-dir build --source-maps --watch",
     "start": "node --harmony build/updata.js",
