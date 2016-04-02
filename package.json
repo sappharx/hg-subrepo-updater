@@ -1,6 +1,6 @@
 {
   "name": "updata",
-  "version": "0.4.3",
+  "version": "0.0.0-semantically-released",
   "description": "utility for updating hg sub-repositories",
   "scripts": {
     "prebuild": "rm -rf bin && npm run check-coverage",
@@ -9,7 +9,7 @@
     "start": "node --harmony bin/updata.js",
     "prepublish": "npm run build",
     "test:once": "ava src/*.spec.js",
-    "check-coverage": "nyc npm test:once",
+    "check-coverage": "nyc npm run test:once",
     "commit": "git-cz",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
