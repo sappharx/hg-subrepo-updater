@@ -1,6 +1,6 @@
 {
   "name": "updata",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "utility for updating hg sub-repositories",
   "scripts": {
     "prebuild": "rm -rf bin && mkdir bin",
