@@ -1,7 +1,5 @@
 'use strict';
 
-//const $ = require('shelljs');
-
 const cd = require('shelljs').cd;
 const echo = require('shelljs').echo;
 const exec = require('shelljs').exec;
