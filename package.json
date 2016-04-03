@@ -11,7 +11,9 @@
     "test:once": "ava src/*.spec.js",
     "coverage": "nyc npm run test:once",
     "coverage:check": "npm run coverage && nyc check-coverage --lines 5 --functions 5 --branches 5",
-    "coverage:report": "npm run coverage && nyc report --reporter=lcov | coveralls",
+    "coverage:report": "npm run coverage && npm run coverage:codecov && npm run coverage:coveralls",
+    "coverage:codecov": "nyc report --reporter=lcov | codecov",
+    "coverage:coveralls": "nyc report --reporter=lcov | coveralls",
     "commit": "git-cz"
   },
   "bin": {
@@ -43,6 +45,7 @@
     "ava": "0.13.0",
     "babel-cli": "6.6.5",
     "babel-preset-es2015-node5": "1.2.0",
+    "codecov": "1.0.1",
     "commitizen": "2.7.6",
     "coveralls": "2.11.9",
     "cz-conventional-changelog": "1.1.5",
