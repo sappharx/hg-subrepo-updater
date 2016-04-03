@@ -3,7 +3,6 @@
 require('shelljs/global');
 
 const fs = require('fs');
-const msg = require('./messages');
 
 const pathRE = /^([-\w\/]+)(?=\s*)$/mg; // there should just be the repo path
 const hgsubRE = /^([-\w\/]+)(?=\s*=.*$)/mg; // path is followed by `= {url}`

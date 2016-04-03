@@ -12,6 +12,9 @@ https://travis-ci.org/sappharx/hg-subrepo-updater)
 [![Coverage Status](
 https://img.shields.io/coveralls/sappharx/hg-subrepo-updater.svg?style=flat-square)](
 https://coveralls.io/github/sappharx/hg-subrepo-updater)
+[![Codacy Badge](
+https://img.shields.io/codacy/5b9ac87858db4429820bffa8df843a0a.svg?style=flat-square)](
+https://www.codacy.com/app/vinnysisk/hg-subrepo-updater)
 
 This is just a little command-line app that updates your mercurial sub-repositories
 

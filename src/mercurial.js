@@ -6,11 +6,6 @@ const msg = require('./messages');
 
 const hgRoot = pwd();
 
-module.exports = {
-    pull,
-    update
-};
-
 function pull(repo, options) {
     options = options || {};
     
@@ -63,3 +58,8 @@ function logIfNotQuiet(msg, quiet) {
         echo(msg);
     }
 }
+
+module.exports = {
+    pull,
+    update
+};

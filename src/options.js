@@ -3,6 +3,10 @@
 let options = require('commander');
 let pkg = require('../package.json');
 
+function getList(val) {
+    return val.split(',');
+}
+
 const descriptions = {
     ignore: 'ignore specified sub-repositories [provide comma-separated list]',
     ignoreFile: 'specify which sub-repositories to ignore in a separate file',
@@ -25,9 +29,5 @@ options
     .option('-t, --tag <id>', descriptions.tag, 'tip')
     .option('-v, --verbose', descriptions.verbose)
     .parse(process.argv);
-
-function getList(val) {
-    return val.split(',');
-}
 
 module.exports = options;
