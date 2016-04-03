@@ -6,11 +6,6 @@ const msg = require('./messages');
 
 const hgRoot = pwd();
 
-module.exports = {
-    pull: pull,
-    update: update
-};
-
 function pull(repo, options) {
     options = options || {};
 
@@ -63,4 +58,9 @@ function logIfNotQuiet(msg, quiet) {
         echo(msg);
     }
 }
+
+module.exports = {
+    pull: pull,
+    update: update
+};
 //# sourceMappingURL=mercurial.js.map

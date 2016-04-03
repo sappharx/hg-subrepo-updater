@@ -15,6 +15,9 @@ https://coveralls.io/github/sappharx/hg-subrepo-updater)
 [![Codacy Badge](
 https://img.shields.io/codacy/5b9ac87858db4429820bffa8df843a0a.svg?style=flat-square)](
 https://www.codacy.com/app/vinnysisk/hg-subrepo-updater)
+[![Commitizen friendly](
+https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](
+http://commitizen.github.io/cz-cli/)
 
 This is just a little command-line app that updates your mercurial sub-repositories
 
