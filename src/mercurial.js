@@ -1,6 +1,9 @@
 'use strict';
 
-require('shelljs/global');
+const cd = require('shelljs').cd;
+const echo = require('shelljs').echo;
+const exec = require('shelljs').exec;
+const pwd = require('shelljs').pwd;
 
 const msg = require('./messages');
 

@@ -1,10 +1,38 @@
 'use strict';
 
-require('shelljs/global');
+//const $ = require('shelljs');
+
+const cd = require('shelljs').cd;
+const echo = require('shelljs').echo;
+const exec = require('shelljs').exec;
+const pwd = require('shelljs').pwd;
 
 const msg = require('./messages');
 
 const hgRoot = pwd();
+
+function runHgCommand(command, repo, verbose) {
+    if (cd(repo) === null) {
+        console.error(msg.error(`sub-repository, ${ msg.repo(repo) }, doesn't exist`));
+        return 1;
+    }
+
+    let proc = exec(command, { silent: true });
+
+    if (verbose) {
+        echo(msg.hg(proc.stdout));
+    }
+
+    cd(hgRoot);
+
+    return proc.code;
+}
+
+function logIfNotQuiet(msg, quiet) {
+    if (!quiet) {
+        echo(msg);
+    }
+}
 
 function pull(repo, options) {
     options = options || {};
@@ -34,29 +62,6 @@ function update(repo, tag, options) {
     }
 
     return true;
-}
-
-function runHgCommand(command, repo, verbose) {
-    if (cd(repo) === null) {
-        console.error(msg.error(`sub-repository, ${ msg.repo(repo) }, doesn't exist`));
-        return 1;
-    }
-
-    let proc = exec(command, { silent: true });
-
-    if (verbose) {
-        echo(msg.hg(proc.stdout));
-    }
-
-    cd(hgRoot);
-
-    return proc.code;
-}
-
-function logIfNotQuiet(msg, quiet) {
-    if (!quiet) {
-        echo(msg);
-    }
 }
 
 module.exports = {

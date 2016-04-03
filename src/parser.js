@@ -1,6 +1,6 @@
 'use strict';
 
-require('shelljs/global');
+const cat = require('shelljs').cat;
 
 const fs = require('fs');
 
