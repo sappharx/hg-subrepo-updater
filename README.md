@@ -6,6 +6,9 @@ https://nodei.co/npm/updata/)
 [![License](
 http://img.shields.io/:license-mit-blue.svg?style=flat-square)](
 http://vsisk.mit-license.org)
+[![Build Status](
+http://img.shields.io/travis/sappharx/hg-subrepo-updater.svg?style=flat-square&branch=master)](
+https://travis-ci.org/sappharx/hg-subrepo-updater)
 
 This is just a little command-line app that updates your mercurial sub-repositories
 
