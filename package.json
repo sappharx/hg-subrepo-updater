@@ -10,8 +10,8 @@
     "prepublish": "npm run coverage:check && npm run build",
     "test:once": "ava src/*.spec.js",
     "coverage": "nyc npm run test:once",
-    "coverage:check": "nyc check-coverage --lines 5 --functions 5 --branches 5",
-    "coverage:report": "nyc report --reporter=lcov | coveralls",
+    "coverage:check": "npm run coverage && nyc check-coverage --lines 5 --functions 5 --branches 5",
+    "coverage:report": "npm run coverage && nyc report --reporter=lcov | coveralls",
     "commit": "git-cz"
   },
   "bin": {
