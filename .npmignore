@@ -1,6 +1,4 @@
-node_modules
 Shared
-bin
 .idea
 .vscode
 .nyc_output
