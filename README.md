@@ -12,6 +12,12 @@ https://coveralls.io/github/sappharx/hg-subrepo-updater)
 [![Codacy Badge](
 https://img.shields.io/codacy/5b9ac87858db4429820bffa8df843a0a.svg?style=flat-square)](
 https://www.codacy.com/app/vinnysisk/hg-subrepo-updater)
+[![Code Climate](
+https://img.shields.io/codeclimate/github/sappharx/hg-subrepo-updater.svg?style=flat-square)](
+https://codeclimate.com/github/sappharx/hg-subrepo-updater)
+[![Issue Count](
+https://img.shields.io/codeclimate/issues/github/sappharx/hg-subrepo-updater.svg?style=flat-square)](
+https://codeclimate.com/github/sappharx/hg-subrepo-updater)
 
 [![bitHound Overall Score](
 https://www.bithound.io/github/sappharx/hg-subrepo-updater/badges/score.svg)](
