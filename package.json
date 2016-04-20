@@ -3,16 +3,18 @@
   "version": "0.5.4",
   "description": "utility for updating hg sub-repositories",
   "scripts": {
+    "lint": "eslint src/",
     "prebuild": "rm -rf bin && mkdir bin",
     "build": "babel src --out-dir bin --source-maps",
     "watch": "babel src --out-dir bin --source-maps --watch",
     "start": "node --harmony bin/updata.js",
     "prepublish": "npm run coverage:check && npm run build",
-    "test:once": "ava src/*.spec.js",
+    "test:once": "npm run lint && ava src/*.spec.js",
     "coverage": "nyc npm run test:once",
     "coverage:check": "npm run coverage && nyc check-coverage --lines 5 --functions 5 --branches 5",
     "coverage:report": "npm run coverage && npm run coverage:coveralls",
     "coverage:coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "precommit": "npm run test:once",
     "commit": "git-cz"
   },
   "bin": {
@@ -46,6 +48,8 @@
     "commitizen": "2.7.6",
     "coveralls": "2.11.9",
     "cz-conventional-changelog": "1.1.5",
+    "eslint": "2.8.0",
+    "eslint-config-airbnb": "7.0.0",
     "nyc": "6.4.0"
   },
   "czConfig": {
