@@ -1,5 +1,3 @@
-'use strict';
-
 const options = require('commander');
 const pkg = require('../package.json');
 

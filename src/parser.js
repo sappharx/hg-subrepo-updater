@@ -1,5 +1,3 @@
-'use strict';
-
 const cat = require('shelljs').cat;
 
 const fs = require('fs');
