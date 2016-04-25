@@ -1,6 +1,6 @@
 {
   "name": "updata",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "description": "utility for updating hg sub-repositories",
   "scripts": {
     "lint": "eslint src/",
