@@ -15,7 +15,9 @@
     "coverage:report": "npm run coverage && npm run coverage:coveralls",
     "coverage:coveralls": "nyc report --reporter=text-lcov | coveralls",
     "precommit": "npm run test:once",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "preversion": "npm run test:once",
+    "postversion": "git push && git push --tags"
   },
   "bin": {
     "updata": "./bin/updata.js"
