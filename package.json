@@ -53,7 +53,7 @@
     "eslint": "2.9.0",
     "eslint-config-airbnb": "8.0.0",
     "eslint-plugin-import": "1.7.0",
-    "nyc": "6.4.3"
+    "nyc": "6.4.4"
   },
   "config": {
     "commitizen": {
