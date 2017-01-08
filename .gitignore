@@ -6,3 +6,4 @@ bin
 .nyc_output
 coverage
 browse.VC.db
+npm-debug.log
