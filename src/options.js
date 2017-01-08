@@ -1,8 +1,8 @@
-const options = require('commander');
-const pkg = require('../package.json');
+const options = require('commander')
+const pkg = require('../package.json')
 
-function getList(val) {
-  return val.split(',');
+function getList (val) {
+  return val.split(',')
 }
 
 const descriptions = {
@@ -13,8 +13,8 @@ const descriptions = {
   pullOnly: 'only pull latest changes from remote (don\'t update)',
   quiet: 'limit console output',
   tag: 'tag to which to update sub-repositories [defaults to tip]',
-  verbose: 'display output from mercurial',
-};
+  verbose: 'display output from mercurial'
+}
 
 options
   .version(pkg.version)
@@ -26,6 +26,6 @@ options
   .option('-q, --quiet', descriptions.quiet)
   .option('-t, --tag <id>', descriptions.tag, 'tip')
   .option('-v, --verbose', descriptions.verbose)
-  .parse(process.argv);
+  .parse(process.argv)
 
-module.exports = options;
+module.exports = options

@@ -3,7 +3,7 @@
   "version": "0.5.5",
   "description": "utility for updating hg sub-repositories",
   "scripts": {
-    "lint": "eslint src/",
+    "lint": "standard",
     "prebuild": "rm -rf bin && mkdir bin",
     "build": "babel src --out-dir bin --source-maps",
     "watch": "babel src --out-dir bin --source-maps --watch",
@@ -50,10 +50,8 @@
     "commitizen": "^2.8.2",
     "coveralls": "^2.11.9",
     "cz-conventional-changelog": "^1.1.6",
-    "eslint": "^3.2.2",
-    "eslint-config-airbnb": "^9.0.1",
-    "eslint-plugin-import": "^1.8.1",
-    "nyc": "^7.0.0"
+    "nyc": "^7.0.0",
+    "standard": "^8.6.0"
   },
   "config": {
     "commitizen": {
