@@ -15,7 +15,7 @@ const logging = {
 if (!fs.existsSync(options.listFile)) {
   echo(msg.error(`file (${options.listFile}) not found`))
   options.help()
-  process.exit(1)
+  process.exit(1) // eslint-disable-line no-process-exit
 }
 
 const ignoredRepos = parser.ignoreFile(options.ignoreFile)
